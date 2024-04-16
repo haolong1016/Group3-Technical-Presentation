@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Components 01</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="styles02.css" rel="stylesheet02">
+</head>
+<body>
+    <h2>Components - Accordions</h2>
+
+<!-- Accordions -->
+<div class="accordion" id="accordionExample">
+
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLoopy01" aria-expanded="true" aria-controls="collapseLoopy01">Loopy01</button>
+        </h2>
+        <div id="collapseLoopy01" class="accordion-collapse collapse show">
+            <img src="./image1.jpg">
+            <div class="card-head">Loopy image 01</div>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLoopy02" aria-expanded="true" aria-controls="collapseLoopy02">Loppy02</button>
+        </h2>
+        <div id="collapseLoopy02" class="accordion-collapse collapse">
+            <img src="./image2.jpg">
+            <div class="card-head">Loopy image 02</div>
+        </div>
+    </div>
+
+
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLoopy03" aria-expanded="true" aria-controls="collapseLoopy03">Loopy03</button>
+        </h2>
+        <div id="collapseLoopy03" class="accordion-collapse collapse">
+            <img src="./image3.jpg">
+            <div class="card-head">Loopy image 03</div>
+        </div>
+    </div>
+</div>
+
+<script src="http://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

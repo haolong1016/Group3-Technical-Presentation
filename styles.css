@@ -1,0 +1,74 @@
+.navbar .nav-item.dropdown .nav-link {
+    padding-right: 2.5rem;
+}
+
+.navbar .nav-item.dropdown .nav-link::after {
+    content: '\25BC';
+    font-size: 0.7em;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.navbar .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: pink;
+    border-radius: 5px;
+    margin-top: 0.5rem;
+    white-space: nowrap;
+}
+
+.navbar .nav-item:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-item {
+    color: black;
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    display: block;
+    clear: both;
+    white-space: nowrap;
+}
+
+.dropdown-item:hover, .dropdown-item:focus {
+    background-color: pink;
+    border-radius: 5px;
+}
+
+.accordion {
+    --circle-x: 1.8rem;
+    --circle-y: 0;
+    --circle-r: 200%;
+    --circle-bg:white;
+    color:black;
+
+    background-color: var(--circle-bg);
+    max-width: 56ch;
+    margin-bottom: 1rem;
+    border-radius: min(8px,0.5rem);
+
+    display: grid;
+    grid-template-rows: 0fr 0fr;
+    transition-timing-function: var(--slide-ease);
+    transition-duration: 200ms, 200ms, var(--slide-duration);
+    transition-property: opacity, box-shadow, grid-template-rows;
+    transition-delay: 0ms, 0ms, var(--slide-delay);
+    box-shadow:0 0 0 2px □rgba(0, 0, 0, 0.1);
+    opacity: 0.9;
+    
+.accordion:not(:target):hover {
+    box-shadow:0 0 0 2px □rgba(0, 0, 0, 0.5);
+}
+
+.accordion:not(:target):active {
+    opacity: 1;
+    box-shadow: 0 4px 7px 0 □rgba(0, 0, 0, 0.3);
+    }
+    
+.accordion,
+.content {
+    overflow: hidden;
+}

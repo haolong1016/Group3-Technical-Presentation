@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Carousel</title>
+  <style>
+    /* Style for carousel */
+    .carousel {
+      position: relative;
+      max-width: 600px;
+      margin: auto;
+      overflow: hidden;
+    }
+
+    .carousel-img {
+      display: none;
+      width: 100%;
+    }
+
+    /* Style for indicators */
+    .carousel-indicators {
+      text-align: center;
+    }
+
+    .indicator {
+      display: inline-block;
+      cursor: pointer;
+      height: 10px;
+      width: 10px;
+      margin: 0 5px;
+      background-color: #bbb;
+      border-radius: 50%;
+    }
+
+    .active {
+      background-color: #333;
+    }
+
+    /* Style for controls */
+    .carousel-control {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 10px;
+      border: none;
+      z-index: 10;
+    }
+
+    .carousel-control-left {
+      left: 0;
+    }
+
+    .carousel-control-right {
+      right: 0;
+    }
+  </style>
+</head>
+<body>
+    <h2>Component-Carousel</h2>
+
+<div class="carousel">
+  <div class="carousel-img">
+    <img src="image3.jpg" alt="Image 3">
+  </div>
+  <div class="carousel-img">
+    <img src="image1.jpg" alt="Image 1">
+  </div>
+  <div class="carousel-img">
+    <img src="image3.jpg" alt="Image 3">
+  </div>
+
+  <!-- Indicators -->
+  <div class="carousel-indicators">
+    <span class="indicator"></span>
+    <span class="indicator"></span>
+    <span class="indicator"></span>
+  </div>
+
+  <!-- Left and right controls -->
+  <button class="carousel-control carousel-control-left" onclick="changeSlide(-1)">❮</button>
+  <button class="carousel-control carousel-control-right" onclick="changeSlide(1)">❯</button>
+</div>
+
+<script>
+  let slideIndex = 0;
+  showSlide(slideIndex);
+
+  function changeSlide(n) {
+    showSlide(slideIndex += n);
+  }
+
+  function showSlide(n) {
+    let slides = document.getElementsByClassName("carousel-img");
+    let indicators = document.getElementsByClassName("indicator");
+
+    if (n >= slides.length) { slideIndex = 0; }
+    if (n < 0) { slideIndex = slides.length - 1; }
+
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+
+    for (let i = 0; i < indicators.length; i++) {
+      indicators[i].className = indicators[i].className.replace(" active", "");
+    }
+
+    slides[slideIndex].style.display = "block";
+    indicators[slideIndex].className += " active";
+  }
+</script>
+
+</body>
+</html>
